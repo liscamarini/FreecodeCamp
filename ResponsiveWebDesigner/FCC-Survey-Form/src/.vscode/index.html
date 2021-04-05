@@ -1,0 +1,159 @@
+<!Doctype html>
+<html lang="pt-BR">
+
+<head>
+  <title>Survey Form</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Laís Camarini">
+  <link rel="stylesheet" href="style.css">
+  <link rel = "preconnect" href = "https://fonts.gstatic.com">
+<link href = "https://fonts.googleapis.com/css2? family = Poppins & display = swap" rel = "folha de estilo ">
+
+</head>
+
+<body>
+    <script>
+        //Mascara Telefone
+            function mascaraTelefone(input){
+            input.maxLength = 15;
+            setTimeout(
+                function(){
+                    input.value = formataTelefone(input.value);
+                }
+                ,1
+            );
+        };
+
+        function formataTelefone(value){
+            return value
+            .replace(/\D/g, '')
+            .replace(/^(\d{2})(\d)/g, '($1)$2')
+            .replace(/(\d)(\d{4})$/, '$1-$2');
+            
+            if(value.length < 14) value.replace(/(\d{4})(\d)/,"$1-$2");
+            else value = value.replace(/(\d{5})(\d)/,"$1-$2");
+           
+        };
+
+        // Mascara CPF
+        function mascaraCPF(input){
+            input.maxLength = 15;
+            setTimeout(
+                function(){
+                    input.value = formataCPF(input.value);
+                }
+                ,1
+            );
+        };
+
+        function formataCPF(value){
+            return value
+            .replace(/\D/g, '')
+            .replace(/(\d{3})(\d)/, '$1.$2')
+            .replace(/(\d{3})(\d)/, '$1.$2')
+            .replace(/(\d{3})(\d{1,2})/, '$1-$2')
+            .replace(/(-\d{2})\d+?$/, '$1');
+        };
+    </script>
+    <div id="main">
+        <header>
+            <h1 id="title">Survey Form</h1>
+            <p id="description">Woman's Tech Form</p>
+          </header>
+        <main>
+        <form id="survey-form" method="GET" action="#">
+            <div class="bottom-top-padding">
+                <div class="label-div">
+                    <label id="name-label" for="name">Name: </label>
+                </div>
+                <div class="input-div">
+                    <input id="name" class="input-text" type="text" placeholder="Full Name" required>
+                </div>
+            </div>
+            <div class="bottom-top-padding">
+                <div class="label-div">
+                    <label id="email-label" for="email">E-mail: </label>
+                </div>
+                <div class="input-div">
+                    <input id="email" class="input-email" type="email" placeholder="email@email.com" required>
+                </div>
+            </div>
+            <div class="bottom-top-padding">
+                <div class="label-div">
+                    <label id="phone" for="phone">Phone: </label>
+                </div>
+                <div class="input-div">
+                    <input id='phone' class="input-phone" type="text" name="phone" placeholder="(00)00000-0000" onkeypress="mascaraTelefone(this)" required>
+                </div>
+            </div>
+            <div class="bottom-top-padding">
+                <div class="label-div">
+                    <label id="cpf-label" for="cpf">CPF: </label>
+                </div>
+                <div class="input-div">
+                    <input id="cpf" class="input-cpf" type="text" placeholder="000.000.000-00" onkeypress="mascaraCPF(this)" required>
+                </div>
+            </div>
+
+            <div class="bottom-top-padding">
+                <div class="label-div">
+                    <label>Work or which sector most identifies itself:</label>
+                </div>
+                <div id="" class="input-div">
+                    <label for="real-estate"><input id="real-estate" type="checkbox" name="real-estate" value="real-estate">Infrastructure and Networks</label>
+                    </br>
+                    <label for="mutual-funds"><input id="mutual-funds" type="checkbox" name="mutual-funds" value="mutual-funds">Software development</label>
+                    </br>
+                    <label for="crypto"><input id="crypto" type="checkbox" name="crypto" value="crypto">
+                        Information security</label>
+                    </br>
+                    <label for="stocks"><input id="stocks" type="checkbox" name="stocks" value="stocks">Data Science</label>
+                    </br>
+                </div>
+            </div>
+            <div class="bottom-top-padding">
+                <div class="label-div">
+                    <label for="dropdown">You already work in the area ?</label>
+                </div>
+                <div class="input-div">
+                    <select id="dropdown" type="dropdown" placeholder="select an option">
+                        <option>Select an Option</option>
+                        <option>Yes</option>
+                        <option>No</option>
+                    </select>
+                </div>
+             </div>
+            <div class="bottom-top-padding">
+                <div class="label-div">
+                    <label>If you already work, tell us what the working environment is like.</label>
+                </div>
+                <div class="input-div">
+                    <textarea type="text"></textarea>
+                </div>
+            </div>
+            
+            <div class="bottom-top-padding">
+                <div class="label-div">
+                    <label>Do you believe that a community for women in technology is important?</label>
+                </div>
+                <div class="">
+                    <label> 
+                        <input type="radio" name="data" value="yes">Yes 
+                    </label>
+                    </br>
+                    <label> 
+                        <input type="radio" name="data" value="no">No 
+                    </label>
+                </div>
+                </div>
+                <strong>Thank you for your participation</strong>
+            <div id="submit-div">
+                <button id="submit">Submit</button>
+            </div>
+      </form>
+    </main>
+  </div>
+</body>
+
+</html>

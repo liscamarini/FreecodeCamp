@@ -1,0 +1,99 @@
+body{
+     display: flex;
+     flex-direction: row;
+     justify-content: center;
+     background: linear-gradient(#e66465, #9198e5);
+     font-family: 'Poppins';
+   }
+   #main{
+     width: 60%;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     background: #dcd2e4;
+     border-radius: 10px;
+     border-width: 13px;
+     border-color: #0f0316;
+     margin-top: 50px;
+     margin-bottom: 25px;
+   }
+   form{
+     display: flex;
+     flex-direction: column;
+     justify-content: space-between;
+     min-height: 500px;
+    
+   }
+   
+    #title {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        color: #220841;
+        font-family: 'Poppins';
+        font-weight:  600;
+       }
+    #description {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        color: #220841;
+        font-family: 'Poppins';
+        font-weight:  400;
+        text-decoration: underline;
+       }
+     
+     
+   
+   main{
+     display: flex;
+     flex-direction: row;
+     padding-bottom: 10px;
+     border-radius: 2px;
+   }
+   .bottom-top-padding{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: flex;
+     
+   }
+   
+   .label-div{
+     width: 36%;
+     text-align: center;
+     color: #220841;
+   }
+
+   .input-div{
+    margin-right: 16px;    
+     
+   }
+
+   #submit-div{
+    display: flex;
+    justify-content: center;
+     
+   }
+   .input-text, .input-email, .input-phone, .input-cpf, select, textarea{
+     width: 180px;
+     height: 100%;
+     color: #0f0316;
+     border-radius: 5px;
+   }
+   #submit{
+     background-color: #220841;
+     color: white;
+     height: 35px;
+     width: 200px;
+     border-radius: 8px;
+     font-size: 20px; 
+     border: 0px;
+     font-family: 'Poppins', sans-serif;
+
+   }
+   strong {
+       text-align: center;
+       margin-top: 20px;
+       margin-bottom: 20px;
+   }
+   
